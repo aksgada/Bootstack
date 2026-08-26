@@ -1,0 +1,676 @@
+/* =========================================================
+   TECHNOLOGY SECTION
+========================================================= */
+
+.tech {
+  position: relative;
+  overflow: hidden;
+  color: var(--ink);
+
+  --tech-rule: rgba(35, 87, 132, 0.14);
+  --tech-blue: #168cff;
+  --tech-cyan: #20d7c4;
+  --tech-yellow: #ffd22e;
+  --tech-mist: #f5f8fb;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.tech__grid {
+  display: grid;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.tech__lede {
+  position: relative;
+}
+
+.tech__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  margin-bottom: 1.5rem;
+
+  color: var(--tech-blue);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.tech__eyebrow::before {
+  content: '';
+
+  width: 28px;
+  height: 2px;
+
+  background: var(--tech-yellow);
+}
+
+.tech__lede h2 {
+  max-width: 14ch;
+
+  margin-bottom: var(--s-3);
+
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.tech__highlight {
+  display: block;
+  color: var(--tech-blue);
+}
+
+.tech__lede .body {
+  max-width: 50ch;
+
+  color: var(--fg-soft);
+
+  line-height: 1.65;
+}
+
+.tech__small-copy {
+  max-width: 45ch;
+
+  margin-top: 1.25rem;
+
+  color: var(--fg-faint);
+
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.tech__stats {
+  display: flex;
+  gap: 2rem;
+
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--tech-rule);
+}
+
+.tech__stat {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.tech__stat strong {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+.tech__stat span {
+  color: var(--fg-faint);
+
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   TECHNOLOGY BOARD
+========================================================= */
+
+.tech__board {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+}
+
+
+/* =========================================================
+   MODULE CARD
+========================================================= */
+
+.tech__module {
+  position: relative;
+
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: clamp(1.15rem, 2vw, 1.5rem);
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(245, 248, 251, 0.94)
+    );
+
+  border: 1px solid var(--tech-rule);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 30px rgba(21, 55, 82, 0.045);
+
+  transition:
+    transform 0.45s var(--ease-out),
+    box-shadow 0.45s var(--ease-out),
+    border-color 0.45s var(--ease-out);
+}
+
+
+/* Subtle grid background */
+
+.tech__module::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.35;
+
+  background-image:
+    linear-gradient(
+      rgba(22, 140, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(22, 140, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 24px 24px;
+
+  pointer-events: none;
+}
+
+
+/* Glow */
+
+.tech__module::after {
+  content: '';
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -60px;
+  bottom: -60px;
+
+  border-radius: 50%;
+
+  background: var(--tech-blue);
+
+  opacity: 0.06;
+
+  filter: blur(20px);
+
+  transition:
+    transform 0.6s var(--ease-out),
+    opacity 0.6s var(--ease-out);
+}
+
+
+/* Hover */
+
+.tech__module:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(22, 140, 255, 0.3);
+
+  box-shadow:
+    0 20px 50px rgba(21, 55, 82, 0.1);
+}
+
+.tech__module:hover::after {
+  opacity: 0.13;
+
+  transform: scale(1.6);
+}
+
+
+/* =========================================================
+   ACCENT LINE
+========================================================= */
+
+.tech__module-accent {
+  position: absolute;
+
+  top: 0;
+  left: 1.5rem;
+
+  width: 45px;
+  height: 3px;
+
+  background: var(--tech-blue);
+
+  border-radius: 0 0 10px 10px;
+
+  transition:
+    width 0.45s var(--ease-out);
+}
+
+.tech__module:nth-child(2) .tech__module-accent {
+  background: #a866ff;
+}
+
+.tech__module:nth-child(3) .tech__module-accent {
+  background: var(--tech-cyan);
+}
+
+.tech__module:nth-child(4) .tech__module-accent {
+  background: var(--tech-yellow);
+}
+
+.tech__module:hover .tech__module-accent {
+  width: 80px;
+}
+
+
+/* =========================================================
+   MODULE HEADER
+========================================================= */
+
+.tech__module-head {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+
+  margin-bottom: 1.25rem;
+}
+
+.tech__module-number {
+  display: grid;
+  place-items: center;
+
+  width: 36px;
+  height: 36px;
+
+  flex: none;
+
+  border: 1px solid var(--tech-rule);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: var(--tech-blue);
+
+  font-size: 0.62rem;
+}
+
+.tech__module-info {
+  min-width: 0;
+
+  display: grid;
+  gap: 0.25rem;
+
+  flex: 1;
+}
+
+.tech__module-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 0.5rem;
+}
+
+.tech__module-name {
+  color: var(--ink);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.tech__module-icon {
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 140, 255, 0.07);
+
+  color: var(--tech-blue);
+
+  font-size: 0.95rem;
+
+  transition:
+    transform 0.4s var(--ease-out),
+    background-color 0.4s var(--ease-out);
+}
+
+.tech__module:hover .tech__module-icon {
+  transform: rotate(12deg) scale(1.08);
+
+  background: rgba(22, 140, 255, 0.12);
+}
+
+.tech__module-note {
+  color: var(--fg-faint);
+
+  font-size: 0.7rem;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   TECHNOLOGY ITEMS
+========================================================= */
+
+.tech__items {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+
+  gap: 0.5rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.tech__item {
+  display: flex;
+  align-items: center;
+
+  min-height: 36px;
+
+  gap: 0.65rem;
+
+  padding: 0.45rem 0.6rem;
+
+  border: 1px solid transparent;
+
+  border-radius: 9px;
+
+  color: var(--fg-soft);
+
+  font-size: 0.8rem;
+
+  transition:
+    transform 0.3s var(--ease-out),
+    background-color 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out),
+    color 0.3s var(--ease-out);
+}
+
+.tech__item:hover {
+  transform: translateX(5px);
+
+  background: rgba(22, 140, 255, 0.055);
+
+  border-color: rgba(22, 140, 255, 0.1);
+
+  color: var(--ink);
+}
+
+
+/* Pip */
+
+.tech__pip {
+  width: 6px;
+  height: 6px;
+
+  flex: none;
+
+  border-radius: 50%;
+
+  background: var(--tech-cyan);
+
+  box-shadow:
+    0 0 0 3px rgba(32, 215, 196, 0.08);
+
+  transition:
+    transform 0.3s var(--ease-out),
+    background-color 0.3s var(--ease-out);
+}
+
+.tech__item:hover .tech__pip {
+  transform: scale(1.35);
+
+  background: var(--tech-blue);
+}
+
+
+/* Arrow */
+
+.tech__item-arrow {
+  margin-left: auto;
+
+  opacity: 0;
+
+  color: var(--tech-blue);
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.3s var(--ease-out),
+    transform 0.3s var(--ease-out);
+}
+
+.tech__item:hover .tech__item-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   MODULE FOOTER
+========================================================= */
+
+.tech__module-footer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: auto;
+  padding-top: 1rem;
+
+  border-top: 1px dashed var(--tech-rule);
+
+  color: var(--fg-faint);
+
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+}
+
+.tech__status {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.35rem;
+}
+
+.tech__status i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #35c76f;
+
+  box-shadow:
+    0 0 0 3px rgba(53, 199, 111, 0.1);
+
+  animation: tech-pulse 2s ease-in-out infinite;
+}
+
+@keyframes tech-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.tech__seam {
+  margin-top: clamp(3.5rem, 8vh, 6rem);
+
+  padding-block: clamp(1rem, 3vh, 1.6rem);
+
+  border-top: 1px solid var(--tech-rule);
+  border-bottom: 1px solid var(--tech-rule);
+
+  color: var(--fg-faint);
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1024px) {
+
+  .tech__grid {
+    grid-template-columns:
+      minmax(0, 0.85fr)
+      minmax(0, 1.15fr);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1023px) {
+
+  .tech__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech__lede h2 {
+    max-width: 18ch;
+  }
+
+  .tech__board {
+    max-width: 900px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 699px) {
+
+  .tech__board {
+    grid-template-columns: 1fr;
+
+    gap: 0.85rem;
+  }
+
+  .tech__module {
+    min-height: 0;
+
+    padding: 1.1rem;
+
+    border-radius: 16px;
+  }
+
+  .tech__module-head {
+    margin-bottom: 1rem;
+  }
+
+  .tech__item {
+    min-height: 34px;
+  }
+
+  .tech__stats {
+    gap: 1.5rem;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .tech__lede h2 {
+    font-size: clamp(2.2rem, 11vw, 3rem);
+  }
+
+  .tech__module-number {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tech__module-name {
+    font-size: 0.65rem;
+  }
+
+  .tech__module-note {
+    font-size: 0.64rem;
+  }
+
+  .tech__item {
+    font-size: 0.75rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .tech__module,
+  .tech__item,
+  .tech__module-icon,
+  .tech__module-accent {
+    transition: none;
+  }
+
+  .tech__status i {
+    animation: none;
+  }
+
+}

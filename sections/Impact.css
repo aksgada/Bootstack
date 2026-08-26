@@ -1,0 +1,1065 @@
+/* =========================================================
+   IMPACT SECTION
+========================================================= */
+
+.impact {
+  position: relative;
+
+  overflow: hidden;
+
+  color: var(--ink);
+
+  background: var(--white);
+
+  --impact-yellow: #f4a900;
+  --impact-yellow-dark: #d98b00;
+
+  --impact-rule: rgba(8, 22, 31, 0.13);
+  --impact-soft: rgba(8, 22, 31, 0.65);
+  --impact-faint: rgba(8, 22, 31, 0.42);
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.impact__background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+.impact__grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(8, 22, 31, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(8, 22, 31, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 85%
+    );
+}
+
+
+.impact__orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.impact__orb--one {
+  width: 360px;
+  height: 360px;
+
+  top: -230px;
+  right: -120px;
+
+  border: 1px solid rgba(244, 169, 0, 0.15);
+
+  box-shadow:
+    inset 0 0 100px rgba(244, 169, 0, 0.06);
+}
+
+
+.impact__orb--two {
+  width: 220px;
+  height: 220px;
+
+  bottom: -120px;
+  left: -100px;
+
+  border: 1px solid rgba(22, 140, 255, 0.1);
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.impact .shell {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   MAIN ROW
+========================================================= */
+
+.impact__main {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 0.72fr)
+    minmax(0, 1.8fr);
+
+  gap: clamp(2rem, 5vw, 5rem);
+
+  align-items: stretch;
+
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+
+/* =========================================================
+   LEFT HEADER
+========================================================= */
+
+.impact__header {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  max-width: 460px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.impact__eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+
+  margin-bottom: 1.25rem;
+
+  color: var(--impact-yellow-dark);
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+
+.impact__eyebrow-line {
+
+  width: 30px;
+
+  height: 2px;
+
+  background: var(--impact-yellow);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.impact__title {
+
+  max-width: 8ch;
+
+  margin: 0;
+
+  font-weight: 700;
+
+  letter-spacing: -0.06em;
+
+  line-height: 0.9;
+}
+
+
+.impact__title span {
+
+  display: block;
+
+  color: var(--impact-yellow-dark);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.impact__intro {
+
+  max-width: 42ch;
+
+  margin-top: 1.5rem;
+
+  color: var(--impact-soft);
+
+  font-size: clamp(
+    0.9rem,
+    1.15vw,
+    1rem
+  );
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   HEADER META
+========================================================= */
+
+.impact__header-meta {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.55rem;
+
+  margin-top: 1.8rem;
+
+  color: var(--impact-faint);
+
+  font-size: 0.55rem;
+
+  letter-spacing: 0.1em;
+}
+
+
+.impact__meta-dot {
+
+  width: 4px;
+
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: var(--impact-yellow);
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.impact__stats {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+
+  border-top: 1px solid var(--impact-rule);
+
+  border-bottom: 1px solid var(--impact-rule);
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.impact__stat {
+
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 330px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  padding:
+    1.35rem
+    1rem;
+
+  overflow: hidden;
+
+  border-right: 1px solid var(--impact-rule);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(248, 250, 252, 0.75)
+    );
+
+  transition:
+    transform 0.45s var(--ease-out),
+    background 0.45s var(--ease-out),
+    box-shadow 0.45s var(--ease-out);
+}
+
+
+.impact__stat:last-child {
+  border-right: none;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.impact__stat:hover {
+
+  transform: translateY(-7px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 1),
+      rgba(255, 248, 225, 0.95)
+    );
+
+  box-shadow:
+    0 20px 45px rgba(8, 22, 31, 0.09);
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.impact__stat-glow {
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  top: -60px;
+  right: -60px;
+
+  border-radius: 50%;
+
+  background: var(--impact-yellow);
+
+  opacity: 0.08;
+
+  filter: blur(25px);
+
+  transition:
+    transform 0.6s var(--ease-out),
+    opacity 0.6s var(--ease-out);
+}
+
+
+.impact__stat:nth-child(2)
+.impact__stat-glow {
+  background: #168cff;
+}
+
+
+.impact__stat:nth-child(3)
+.impact__stat-glow {
+  background: #20cdbb;
+}
+
+
+.impact__stat:nth-child(4)
+.impact__stat-glow {
+  background: #9b6cff;
+}
+
+
+.impact__stat:nth-child(5)
+.impact__stat-glow {
+  background: #ff8d24;
+}
+
+
+.impact__stat:hover
+.impact__stat-glow {
+
+  transform: scale(1.7);
+
+  opacity: 0.15;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.impact__icon-wrap {
+
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  place-items: center;
+
+  width: 42px;
+
+  height: 42px;
+
+  margin-bottom: 1.5rem;
+
+  border-radius: 12px;
+
+  background:
+    rgba(244, 169, 0, 0.08);
+
+  border: 1px solid
+    rgba(244, 169, 0, 0.18);
+
+  transition:
+    transform 0.4s var(--ease-out),
+    background 0.4s var(--ease-out);
+}
+
+
+.impact__icon {
+
+  color: var(--impact-yellow-dark);
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  transition:
+    transform 0.4s var(--ease-out),
+    color 0.4s var(--ease-out);
+}
+
+
+.impact__stat:hover
+.impact__icon-wrap {
+
+  transform:
+    translateY(-3px)
+    rotate(-4deg);
+
+  background:
+    rgba(244, 169, 0, 0.14);
+}
+
+
+.impact__stat:hover
+.impact__icon {
+
+  color: var(--impact-yellow);
+
+  transform: scale(1.12);
+}
+
+
+/* =========================================================
+   VALUE
+========================================================= */
+
+.impact__value {
+
+  position: relative;
+
+  z-index: 1;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: clamp(
+    2rem,
+    3.2vw,
+    3rem
+  );
+
+  font-weight: 700;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  font-variant-numeric: tabular-nums;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.4s var(--ease-out),
+    color 0.4s var(--ease-out);
+}
+
+
+.impact__stat:hover
+.impact__value {
+
+  color: var(--impact-yellow-dark);
+
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.impact__label {
+
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0.85rem 0 0;
+
+  color: var(--ink);
+
+  font-family: var(--font-display);
+
+  font-size: clamp(
+    0.85rem,
+    1.05vw,
+    1.05rem
+  );
+
+  font-weight: 650;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.impact__note {
+
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 17ch;
+
+  margin: 0.5rem 0 0;
+
+  color: var(--impact-soft);
+
+  font-size: 0.68rem;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.impact__stat-bottom {
+
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: auto;
+
+  padding-top: 0.8rem;
+
+  border-top: 1px dashed var(--impact-rule);
+
+  color: var(--impact-faint);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.1em;
+}
+
+
+.impact__arrow {
+
+  display: grid;
+
+  place-items: center;
+
+  width: 26px;
+
+  height: 26px;
+
+  border: 1px solid var(--impact-rule);
+
+  border-radius: 50%;
+
+  color: var(--ink);
+
+  font-size: 0.8rem;
+
+  transition:
+    transform 0.4s var(--ease-out),
+    background 0.4s var(--ease-out),
+    color 0.4s var(--ease-out);
+}
+
+
+.impact__stat:hover
+.impact__arrow {
+
+  transform: rotate(45deg);
+
+  background: var(--ink);
+
+  color: white;
+}
+
+
+/* =========================================================
+   HOVER LINE
+========================================================= */
+
+.impact__hover-line {
+
+  position: absolute;
+
+  left: 15%;
+
+  right: 15%;
+
+  bottom: 0;
+
+  height: 3px;
+
+  background: var(--impact-yellow);
+
+  transform: scaleX(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.45s var(--ease-out);
+}
+
+
+.impact__stat:hover
+.impact__hover-line {
+
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+========================================================= */
+
+.impact__bottom {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+
+  padding-top: 1rem;
+
+  border-top: 1px solid var(--impact-rule);
+}
+
+
+.impact__bottom-left {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+}
+
+
+.impact__bottom-line {
+
+  width: 38px;
+
+  height: 2px;
+
+  background: var(--impact-yellow);
+}
+
+
+.impact__bottom-left .mono {
+
+  color: var(--impact-yellow-dark);
+
+  font-size: 0.55rem;
+
+  letter-spacing: 0.12em;
+}
+
+
+.impact__bottom p {
+
+  margin: 0;
+
+  color: var(--impact-faint);
+
+  font-size: 0.7rem;
+}
+
+
+.impact__bottom-mark {
+
+  display: grid;
+
+  place-items: center;
+
+  width: 34px;
+
+  height: 34px;
+
+  border: 1px solid var(--impact-rule);
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.4s var(--ease-out);
+}
+
+
+.impact__bottom-mark:hover {
+
+  transform: rotate(90deg);
+
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .impact__main {
+
+    grid-template-columns:
+      minmax(220px, 0.6fr)
+      minmax(0, 1.7fr);
+
+    gap: 2rem;
+  }
+
+
+  .impact__stat {
+
+    min-height: 300px;
+
+    padding:
+      1.1rem
+      0.75rem;
+  }
+
+
+  .impact__value {
+
+    font-size: clamp(
+      1.7rem,
+      3vw,
+      2.5rem
+    );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .impact__main {
+
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+
+  .impact__header {
+
+    max-width: 650px;
+  }
+
+
+  .impact__title {
+
+    max-width: 10ch;
+  }
+
+
+  .impact__stats {
+
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .impact__stats {
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+
+  .impact__stat {
+
+    min-height: 280px;
+
+    border-bottom:
+      1px solid var(--impact-rule);
+  }
+
+
+  .impact__stat:nth-child(3) {
+
+    border-right: none;
+  }
+
+
+  .impact__stat:nth-child(4),
+  .impact__stat:nth-child(5) {
+
+    border-bottom: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .impact__main {
+
+    gap: 2.5rem;
+  }
+
+
+  .impact__title {
+
+    font-size:
+      clamp(
+        2.8rem,
+        13vw,
+        4rem
+      );
+  }
+
+
+  .impact__intro {
+
+    font-size: 0.9rem;
+  }
+
+
+  .impact__stats {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .impact__stat {
+
+    min-height: 260px;
+
+    padding: 1.1rem;
+
+    border-right:
+      1px solid var(--impact-rule);
+  }
+
+
+  .impact__stat:nth-child(even) {
+
+    border-right: none;
+  }
+
+
+  .impact__stat:nth-child(3) {
+
+    border-right:
+      1px solid var(--impact-rule);
+  }
+
+
+  .impact__stat:nth-child(4) {
+
+    border-right: none;
+  }
+
+
+  .impact__stat:nth-child(5) {
+
+    grid-column: 1 / -1;
+
+    border-right: none;
+
+    border-bottom: none;
+  }
+
+
+  .impact__value {
+
+    font-size: 2.2rem;
+  }
+
+
+  .impact__label {
+
+    font-size: 0.95rem;
+  }
+
+
+  .impact__note {
+
+    font-size: 0.7rem;
+  }
+
+
+  .impact__bottom {
+
+    display: grid;
+
+    grid-template-columns:
+      1fr auto;
+
+    align-items: start;
+
+    gap: 0.8rem;
+  }
+
+
+  .impact__bottom p {
+
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .impact__stats {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .impact__stat,
+  .impact__stat:nth-child(3),
+  .impact__stat:nth-child(4),
+  .impact__stat:nth-child(5) {
+
+    grid-column: auto;
+
+    min-height: 220px;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid var(--impact-rule);
+  }
+
+
+  .impact__stat:last-child {
+
+    border-bottom: none;
+  }
+
+
+  .impact__value {
+
+    font-size: 2.5rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .impact__stat,
+  .impact__icon,
+  .impact__icon-wrap,
+  .impact__value,
+  .impact__arrow,
+  .impact__bottom-mark {
+
+    transition: none;
+  }
+
+
+  .impact__orb {
+
+    display: none;
+  }
+
+}
